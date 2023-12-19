@@ -1,0 +1,22 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update package cache
+    apt:
+      update_cache: true
+    register: update_cache_result
+
+  - name: Apply Dist-Upgrade
+    apt:
+      upgrade: dist
+      force_apt_get: true
+    when: update_cache_result.changed
+    register: dist_upgrade_result
+
+  - name: Reboot if dist-upgrade was processed
+    reboot:
+      msg: "Rebooting for updates"
+    when: dist_upgrade_result.changed
