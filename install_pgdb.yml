@@ -1,0 +1,9 @@
+- hosts: db_servers
+  become: true
+  tasks:
+
+  - name: install postgresql package
+    apt:
+      name: postgresql
+      state: latest
+    when: ansible_distribution == "Ubuntu"
