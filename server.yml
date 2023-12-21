@@ -1,0 +1,10 @@
+#General Server Config File
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Create service user
+    tags: always
+    user:
+      name: svc
+      groups: root
