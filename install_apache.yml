@@ -5,8 +5,9 @@
   tasks:
 
   - name: update repo index & install apache2 and php packages
+    tags: web
     apt:
-      name: 
+      name:
         - apache2
         - libapache2-mod-php
       state: latest
