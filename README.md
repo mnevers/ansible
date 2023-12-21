@@ -6,6 +6,7 @@ dist_upgrade.yml: This playbook for Debian/Ubuntu OS systems updates cache and r
 inventory file. If an upgrade was proccessed it will register a changed state and reboot those specific systems 
 that require a reboot
 
-install_apache.yml: For Debian/Ubuntu OS this package installs apache2 and php support on web servers group
+setup_apache.yml: For Debian/Ubuntu OS this package installs apache2 and php support on web servers group
+and pushes template index.html file
 
 remove_apache.yml: Uninstalls apache and php support
