@@ -14,3 +14,12 @@
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
+  - name: push index html file to webserver
+    tags: web
+    copy:
+      src: site_template.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
+
