@@ -31,7 +31,7 @@
     when: ansible_distribution == "Ubuntu"
     register: conf
 
-  - name: restart apaceh2 service if conf chagned
+  - name: restart apaceh2 service if conf changed
     tags: web
     service:
       name: apache2
