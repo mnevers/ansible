@@ -8,3 +8,18 @@
     user:
       name: svc
       groups: root
+
+  - name: Add SSH key for svc user
+    tags: always
+    authorized_key:
+      user: svc
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDgOphXaZS3I9x4NBlvPhDoUNU8Oz6n+oqbiFkU4CgFN ansible"
+
+  - name: add sudoers file for svc
+    tags: always
+    copy:
+      src: sudoer_svc
+      dest: /etc/sudoers.d/svc
+      owner: root
+      group: root
+      mode: 0440

@@ -7,13 +7,12 @@
   - name: Update package cache
     apt:
       update_cache: true
-    register: update_cache_result
+    changed_when: false
 
   - name: Apply Dist-Upgrade
     apt:
       upgrade: dist
       force_apt_get: true
-    when: update_cache_result.changed
     register: dist_upgrade_result
 
   - name: Reboot if dist-upgrade was processed
