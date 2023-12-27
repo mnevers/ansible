@@ -15,4 +15,6 @@ Creates "svc" service user and sets up ssh key and sudoers file so passwordless 
 setup_apache.yml: For Debian/Ubuntu OS this package installs apache2 and php support on web servers group
 and pushes template index.html file
 
+web_role.yml: Rewrite of setup_apache.yml utilizing roles and variables
+
 remove_apache.yml: Uninstalls apache and php support
