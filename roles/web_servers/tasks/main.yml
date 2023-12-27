@@ -2,8 +2,8 @@
   tags: web
   apt:
     name:
-      - apache2
-      - libapache2-mod-php
+      - "{{ apache_package_name }}"
+      - "{{ php_package_name }}"
     state: latest
     update_cache: yes
   when: ansible_distribution == "Ubuntu"
@@ -11,7 +11,7 @@
 - name: start & enable  apache
   tags: web
   service:
-    name: apache2
+    name: "{{ apache_service }}"
     state: started
     enabled: yes
   when: ansible_distribution == "Ubuntu"
@@ -28,7 +28,7 @@
 - name: restart apaceh2 service if conf changed
   tags: web
   service:
-    name: apache2
+    name: "{{ apache_service }}"
     state: restarted
   when: conf.changed
 
