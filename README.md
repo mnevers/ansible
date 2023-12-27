@@ -8,6 +8,9 @@ dist_upgrade.yml: This playbook for Debian/Ubuntu OS systems updates cache and r
 inventory file. If an upgrade was proccessed it will register a changed state and reboot those specific systems 
 that require a reboot
 
+server.yml: Playbook for general server administration tasks for any kind of server web,db or otherwise etc. 
+Creates "svc" service user and sets up ssh key and sudoers file so passwordless ansible automation tasks can be performed
+
 setup_apache.yml: For Debian/Ubuntu OS this package installs apache2 and php support on web servers group
 and pushes template index.html file
 
