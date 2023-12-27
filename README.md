@@ -2,7 +2,7 @@ Welcome to Matt Nevers' ansible project!
 
 Playbook Overview
 
-This project utilizes passwordless ssh keys with a svc user with NOPASSWD ALL:ALL configured sudoers file to enable a highly automatable enviornment. 
+This project utilizes passwordless ssh keys with a svc user with NOPASSWD configured sudoers file to enable a highly automatable enviornment. 
 Ansible features such as tasks, roles, host_vars, tags, file, service managment, conditonals, lineinfile editing and more are all showcased here.
 
 dist_upgrade.yml: This playbook for Debian/Ubuntu OS systems updates cache and runs dist upgrade on all hosts in
